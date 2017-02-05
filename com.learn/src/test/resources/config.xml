@@ -33,9 +33,9 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
             </property>
         </bean>-->
 
-    <bean id="userServices"
+  <!--  <bean id="userServices"
           class="com.services.user.UserServices">
-       <!--  <property name="configs">
+         <property name="configs">
             <list>
                 <value>aicai, dubbo</value>
                 <value>aicai, filter</value>
@@ -49,8 +49,8 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
             <list>
                 <value>file:/tmp/dubbo-docker.properties</value>
             </list>
-        </property> -->
-    </bean>
+        </property> 
+    </bean>-->
    <!--  <bean id="sysProperty"
           class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
         <property name="properties" ref="propertiesFactory"/>
@@ -61,6 +61,11 @@ http://www.springframework.org/schema/mvc http://www.springframework.org/schema/
     <import resource="classpath*:/spring-modules-*.xml"/>
     <import resource="classpath*:/aicai-services-bill/spring-dubbo-*.xml"/> -->
     
+    <bean id="userServices" class="com.services.user.UserServices"> </bean>
     <bean id="servicesFacade"   class="com.service.impl.ServicesFacadeImpl"></bean>
+    
+   <!--  <context:annotation-config/>
 
+      <context:component-scan base-package="*"/>
+ -->
 </beans>
