@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="web.learn.mapper.BillMapper">
+	<resultMap id="Bill" type="web.learn.model.BillVo">
+		<id column="id" jdbcType="BIGINT" property="id" />
+		<result column="account_no" jdbcType="BIGINT" property="accountNo" />
+		<result column="user_id" jdbcType="BIGINT" property="userId" />
+		<result column="bill_stat" jdbcType="CHAR" property="billStat" />
+		<result column="bill_settle_type" jdbcType="CHAR" property="billSettleType" />
+		<result column="title" jdbcType="VARCHAR" property="title" />
+		<result column="bill_type" jdbcType="CHAR" property="billType" />
+		<result column="period" jdbcType="INTEGER" property="period" />
+		<result column="period_num" jdbcType="INTEGER" property="periodNum" />
+		<result column="amt_bill" jdbcType="BIGINT" property="amtBill" />
+		<result column="amt_capital" jdbcType="BIGINT" property="amtCapital" />
+		<result column="amt_fee" jdbcType="BIGINT" property="amtFee" />
+		<result column="amt_instalment" jdbcType="BIGINT" property="amtInstalment" />
+		<result column="instalment_id" jdbcType="BIGINT" property="instalmentId" />
+		<result column="group_id" jdbcType="VARCHAR" property="groupId" />
+		<result column="createby" jdbcType="BIGINT" property="createby" />
+		<result column="updateby" jdbcType="BIGINT" property="updateby" />
+		<result column="desc" jdbcType="VARCHAR" property="desc" />
+		<result column="del" jdbcType="CHAR" property="del" />
+		<result column="pay_date" jdbcType="DATE" property="payDate" />
+		<result column="begin_date" jdbcType="DATE" property="beginDate" />
+		<result column="end_date" jdbcType="DATE" property="endDate" />
+		<result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+		<result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+		<result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+		<result column="is_collection" jdbcType="CHAR" property="isCollection" />
+		<result column="virtual_biz" jdbcType="CHAR" property="virtualBiz" />
+		<result column="amt_manager" jdbcType="BIGINT" property="amtManager" />
+		<result column="amt_factorage" jdbcType="BIGINT" property="amtFactorage" />
+		<result column="amt_service" jdbcType="BIGINT" property="amtService" />
+	</resultMap>
+	<select id="getByPrimaryKey" parameterType="java.lang.Long" resultMap="Bill">
+		select  * from bill where id = #{id,jdbcType=BIGINT}
+	</select>
+</mapper>
